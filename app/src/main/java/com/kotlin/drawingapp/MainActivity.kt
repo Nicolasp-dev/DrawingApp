@@ -1,10 +1,8 @@
 package com.kotlin.drawingapp
 
 import android.app.Dialog
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +30,17 @@ class MainActivity : AppCompatActivity() {
       drawingView?.setSizeForBrush(10.toFloat())
       brushDialog.dismiss()
     }
+    val mediumBtn : ImageButton = brushDialog.findViewById(R.id.ib_medium_brush)
+    mediumBtn.setOnClickListener {
+      drawingView?.setSizeForBrush(20.toFloat())
+      brushDialog.dismiss()
+    }
+    val largeBtn : ImageButton = brushDialog.findViewById(R.id.ib_large_brush)
+    largeBtn.setOnClickListener {
+      drawingView?.setSizeForBrush(30.toFloat())
+      brushDialog.dismiss()
+    }
+
     brushDialog.show()
   }
 }
